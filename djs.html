@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒计时</title>
+    <style>
+        #d1{
+            font-size: 50px;
+            position: relative;
+            top: 400px;
+            text-shadow: slategray 5px 5px 5px;
+        }
+        #d2{
+            font-size: 40px;
+            position: relative;
+            top: 300px;
+            text-shadow: slategray 5px 5px 5px;
+        }
+
+        body{
+            /*background-color: silver;*/
+            text-align: center;
+            font-family: "Wawati SC";
+            background-image: url("https://desk-fd.zol-img.com.cn/t_s1920x1080c5/g4/M04/03/02/Cg-4y1TZeGeIQhGSACVUF6Zu4MIAAUa-AKaG9sAJVQv299.jpg");
+            <!--background-image: url();-->
+
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="d2">距离过年还有</div>
+<div id="d1"></div>
+<a href="/polls/lunbo.html">轮播</a>
+<audio src="xzq.mp3" autoplay="autoplay" ></audio>
+</body>
+
+
+
+
+<script>
+
+    function f1() {
+
+ var xz = new Date();
+
+ var wl =new Date(2019,01,05,0,0,0);
+
+var b = (wl-xz)/1000;
+
+
+ var t = Math.floor(b/86400);
+
+ var h = Math.floor(b%86400/3600);
+
+ var f = Math.floor(b%3600/60);
+
+ var m = Math.floor(b%60);
+
+
+        d1.innerHTML = t +'天'+h +'时'+f +'分钟'+ m + '秒';
+    }
+    setInterval(function () {f1()},10);
+
+
+
+
+
+
+</script>
+</html>
