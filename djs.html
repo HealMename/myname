@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>计时器</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+	<meta charset="UTF-8">
+    <title>倒计时</title>
     <style>
         #d1{
             font-size: 50px;
@@ -15,23 +18,39 @@
             position: relative;
             top: 300px;
             text-shadow: slategray 5px 5px 5px;
+			
         }
         body{
             text-align: center;
             font-family: "Wawati SC";
-            background-image: url("https://desk-fd.zol-img.com.cn/t_s1920x1080c5/g4/M04/03/02/Cg-4y1TZeGeIQhGSACVUF6Zu4MIAAUa-AKaG9sAJVQv299.jpg");          
-        }
-    </style>
+            background-image: url("http://b31.photo.store.qq.com/psb?/V12KGM052iYjJf/HueTNnC8ib.AtD1NcxQlEDWud2R9Lrqy*vQZOE5NWXU!/c/dB8AAAAAAAAA&bo=OASgBTgEoAURECc!");          
+			
+		
+		}
+		.selector-for-some-widget {
+		  box-sizing: content-box;
+		}
+		*{
+			color:#393D49;
+		}
+</style>
 </head>
 <body>
 
 <div id="d2">我们已经相爱了</div>
 <div id="d1"></div>
+<audio autoplay="autoplay">
+  <source src="http://www.ytmp3.cn/down/50182.mp3"  type="audio/mpeg" />
+</audio>
 </body>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="./layui/layui.js"></script>
 <script>
     function f1() {
  var xz = new Date();
- var wl =new Date(2018,11,16,0,0,0);
+ var wl =new Date(2018,11,18,0,0,0);
 var b = (wl-xz)/1000;
  var t = Math.floor(b/86400);
  var h = Math.floor(b%86400/3600);
