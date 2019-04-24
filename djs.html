@@ -8,59 +8,59 @@
     <title>倒计时</title>
     <style>
         #d1{
-            font-size: 20px;
+            font-size: 40px;
             position: relative;
             top: 400px;
             text-shadow: slategray 5px 5px 5px;
+            color: #0C0C0C;
         }
         #d2{
-            font-size: 20px;
+            font-size: 55px;
             position: relative;
             top: 300px;
-            text-shadow: slategray 5px 5px 5px;
-			
+            text-shadow: slategray 5px 5px 5px;            color: #0C0C0C;
+
+
         }
         body{
             text-align: center;
             font-family: "Wawati SC";
-            /* background-image: url("http://b31.photo.store.qq.com/psb?/V12KGM052iYjJf/HueTNnC8ib.AtD1NcxQlEDWud2R9Lrqy*vQZOE5NWXU!/c/dB8AAAAAAAAA&bo=OASgBTgEoAURECc!");          */
-			
-		
+            background-image: url("http://bpic.588ku.com/back_pic/17/05/28/d57eb1aca87cdcbc48c0c11505d23e6a.jpg");
+			background-size: 100%;
 		}
 		.selector-for-some-widget {
 		  box-sizing: content-box;
 		}
-		*{
-			color:#393D49;
-		}
+
 </style>
 </head>
 <body>
 
-<div id="d2">我们已经相爱了</div>
+<div id="d2">距离过年还有</div>
 <div id="d1"></div>
-<div class="class="layui-icon">&#xe6fc;</div>
+<div class="layui-icon">&#xe6fc;</div>
 <audio autoplay="autoplay">
-	
-  <source src="http://www.ytmp3.cn/down/50182.mp3"  type="audio/mpeg" />
+
+  <source src="http://www.ytmp3.cn/down/48858.mp3"  type="audio/mpeg" />
 </audio>
 </body>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="./layui/layui.js"></script>
+<script src="https://heerey525.github.io/layui-v2.4.3/layui-v2.4.5/layui.js"></script>
 <script>
     function f1() {
  var xz = new Date();
- var wl =new Date(2018,11,18,0,0,0);
+ var wl =new Date(2020,0,25,0,0,0);
+ console.log(wl)
 var b = (wl-xz)/1000;
  var t = Math.floor(b/86400);
  var h = Math.floor(b%86400/3600);
  var f = Math.floor(b%3600/60);
  var m = Math.floor(b%60);
-		a = t +'天'+h +'时'+f +'分钟'+ m + '秒';
-		b = a.replace('-', '')
-        d1.innerHTML = b;
+		var a = t +'天'+h +'时'+f +'分钟'+ m + '秒';
+        var d1 = document.getElementById("d1")
+        d1.innerHTML = a;
     }
     setInterval(function () {f1()},10);
 </script>
