@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+</head>
+<body>
+<div id = "databinding">
+<button v-on:click = "show = !show">点我</button>
+<transition
+    v-on:before-enter="beforeEnter"
+    v-on:enter="enter"
+    v-on:leave="leave"
+    v-bind:css="false"
+  >
+    <p v-if="show">菜鸟教程 -- 学的不仅是技术，更是梦想！！！</p>
+</transition>
+</div>
+<script src="https://blog-static.cnblogs.com/files/yyhh/L2Dwidget.min.js"></script>
+
+<script>
+    L2Dwidget.init();
+
+
+</script>
+<script type = "text/javascript">
+new Vue({
+  el: '#databinding',
+  data: {
+    show: false
+  },
+  methods: {
+    beforeEnter: function (el) {
+      el.style.opacity = 0
+      el.style.transformOrigin = 'left'
+    },
+    enter: function (el, done) {
+      Velocity(el, { opacity: 1, fontSize: '1.4em' }, { duration: 300 })
+      Velocity(el, { fontSize: '1em' }, { complete: done })
+    },
+    leave: function (el, done) {
+      Velocity(el, { translateX: '15px', rotateZ: '5000deg' }, { duration: 6000 })
+      Velocity(el, { rotateZ: '1000deg' }, { loop: 2 })
+      Velocity(el, {
+        rotateZ: '4500deg',
+        translateY: '3000px',
+        translateX: '3000px',
+        opacity: 0
+      }, { complete: done })
+    }
+  }
+})
+</script>
+</body>
+</html>
